@@ -21,7 +21,7 @@ pipeline {
         }
         stage("Build") {
             steps {
-                sh "clean install package"
+                sh "mvn clean package"
                 sh "mv target/hello-1.0.war target/boxfuse-sample-java-war-hello.war"
             }
         }
