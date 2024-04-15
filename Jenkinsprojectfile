@@ -30,7 +30,7 @@ pipeline {
                 expression { params.BRANCH_NAME == 'fe/dev' }
             }
             steps {
-                deployToTomcat('3.145.74.35', 'admin', 'admin', 'http://3.145.74.35:8080/manager/text', '/boxfuse-sample-java-war-hello', 'Dev')
+                deployToTomcat('3.141.31.104', 'admin', 'admin', 'http://3.141.31.104:8080/manager/text', '/boxfuse-sample-java-war-hello', 'Dev')
             }
         }
         stage("Deploy to QA") {
@@ -38,7 +38,7 @@ pipeline {
                 expression { params.BRANCH_NAME == 'fe/qa' }
             }
             steps {
-                deployToTomcat('3.147.59.58', 'admin', 'admin', 'http://3.147.59.58:8080/manager/text', '/boxfuse-sample-java-war-hello', 'QA')
+                deployToTomcat('3.147.59.58', 'tomcat', 'tomcat', 'http://3.147.59.58:8080/manager/text', '/boxfuse-sample-java-war-hello', 'QA')
             }
         }
         stage("Deploy to Prod") {
